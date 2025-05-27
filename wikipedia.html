@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikipedia - U Shape Language Layout</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+        }
+
+        .center-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .u-shape {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .languages.left,
+        .languages.right {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .languages.bottom {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .lang {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+            line-height: 1.4;
+        }
+
+        .lang small {
+            display: block;
+            font-size: 0.8em;
+            font-weight: normal;
+            color: #ddd;
+            margin-top: 4px;
+        }
+
+        .lang:hover {
+            transform: scale(1.1);
+            color: #00bfff;
+        }
+
+        .globe-container {
+            text-align: center;
+        }
+
+        .globe {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+        }
+
+        .search-container {
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 15px;
+            font-size: 1.2em;
+            width: 400px;
+            max-width: 90%;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .search-container button {
+            padding: 15px 20px;
+            font-size: 1.2em;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #009acd;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+            background-color: #4764a2;
+            color: white;
+        }
+
+        .footer-item {
+            text-align: center;
+            max-width: 100px;
+        }
+
+        .footer-item img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="center-content">
+        <h1>Wikipedia</h1>
+        <p>The Free Encyclopedia</p>
+
+        <div class="u-shape">
+            <div class="languages left">
+                <div class="lang">English<br /><small>6,974,000+ articles</small></div>
+                <div class="lang">Español<br /><small>2,021,000+ artículos</small></div>
+                <div class="lang">Deutsch<br /><small>3,001,000+ Artikel</small></div>
+            </div>
+
+            <div class="globe-container">
+                <img class="globe"
+                    src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@1.5x.png"
+                    alt="Wikipedia Globe" />
+            </div>
+
+            <div class="languages right">
+                <div class="lang">Русский<br /><small>2,036,000+ статей</small></div>
+                <div class="lang">Français<br /><small>2,674,000+ articles</small></div>
+                <div class="lang">Português<br /><small>1,146,000+ artigos</small></div>
+            </div>
+        </div>
+
+        <div class="languages bottom">
+            <div class="lang">日本語<br /><small>1,457,000+ 記事</small></div>
+            <div class="lang">中文<br /><small>1,470,000+ 条目</small></div>
+            <div class="lang">Italiano<br /><small>1,910,000+ voci</small></div>
+        </div>
+    </div>
+
+    <div class="search-container text-center">
+        <form id="searchForm" action="https://en.wikipedia.org/wiki/Special:Search" method="GET" target="_blank"
+            class="d-inline-flex">
+            <input type="text" name="search" id="searchInput" placeholder="Search and press the button" required
+                class="form-control" style="max-width: 350px;" />
+            <button type="submit" class="btn btn-primary ms-2">Search</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="footer-item">
+            <img src="https://commons.wikimedia.org/static/images/icons/commonswiki.svg" alt="Commons" />
+            <p><strong>Commons</strong><br />Free media collection</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikivoyage.org/portal/wikivoyage.org/assets/img/Wikivoyage-logo-tiles_1.5x.png"
+                alt="Wikivoyage" />
+            <p><strong>Wikivoyage</strong><br />Free travel guide</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wiktionary.org/portal/wiktionary.org/assets/img/Wiktionary-logo-tiles_1.5x.png"
+                alt="Wiktionary" />
+            <p><strong>Wiktionary</strong><br />Free dictionary</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikibooks.org/portal/wikibooks.org/assets/img/Wikibooks-logo-tiles_1.5x.png"
+                alt="Wikibooks" />
+            <p><strong>Wikibooks</strong><br />Free textbooks</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikinews.org/portal/wikinews.org/assets/img/Wikinews-logo-tiles_1.5x.png"
+                alt="Wikinews" />
+            <p><strong>Wikinews</strong><br />Free news source</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikidata.org/static/images/icons/wikidatawiki.svg" alt="Wikidata" />
+            <p><strong>Wikidata</strong><br />Free knowledge base</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikiversity.org/portal/wikiversity.org/assets/img/Wikiversity-logo-tiles_1.5x.png"
+                alt="Wikiversity" />
+            <p><strong>Wikiversity</strong><br />Free learning resources</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikiquote.org/portal/wikiquote.org/assets/img/Wikiquote-logo-tiles_1.5x.png"
+                alt="Wikiquote" />
+            <p><strong>Wikiquote</strong><br />Free quote compendium</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.mediawiki.org/static/images/icons/mediawikiwiki.svg" alt="MediaWiki" />
+            <p><strong>MediaWiki</strong><br />Free & open wiki software</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Wikisource-logo.png/330px-Wikisource-logo.png"
+                alt="Wikisource" />
+            <p><strong>Wikisource</strong><br />Free content library</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://species.wikimedia.org/static/images/icons/specieswiki.svg" alt="Wikispecies" />
+            <p><strong>Wikispecies</strong><br />Free species directory</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://www.wikifunctions.org/static/images/icons/wikifunctionswiki.svg" alt="Wikifunctions" />
+            <p><strong>Wikifunctions</strong><br />Free function library</p>
+        </div>
+        <div class="footer-item">
+            <img src="https://meta.wikimedia.org/static/images/icons/metawiki.svg" alt="Meta-Wiki" />
+            <p><strong>Meta-Wiki</strong><br />Community coordination & documentation</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Language Switching Script -->
+    <script>
+    const translations = {
+        en: {
+            title: "Wikipedia",
+            subtitle: "The Free Encyclopedia",
+            searchPlaceholder: "Search and press the button",
+            searchButton: "Search",
+            commons: "Free media collection",
+            travel: "Free travel guide",
+            dictionary: "Free dictionary",
+            books: "Free textbooks",
+            news: "Free news source",
+            data: "Free knowledge base",
+            university: "Free learning resources",
+            quote: "Free quote compendium",
+            software: "Free & open wiki software",
+            library: "Free content library",
+            species: "Free species directory",
+            functions: "Free function library",
+            meta: "Community coordination & documentation"
+        },
+        pt: {
+            title: "Wikipédia",
+            subtitle: "A enciclopédia livre",
+            searchPlaceholder: "Pesquise e pressione o botão",
+            searchButton: "Pesquisar",
+            commons: "Coleção de mídia livre",
+            travel: "Guia de viagem gratuito",
+            dictionary: "Dicionário gratuito",
+            books: "Livros didáticos gratuitos",
+            news: "Fonte de notícias gratuita",
+            data: "Base de conhecimento gratuita",
+            university: "Recursos de aprendizagem gratuitos",
+            quote: "Compêndio de citações gratuito",
+            software: "Software wiki gratuito e aberto",
+            library: "Biblioteca de conteúdo gratuito",
+            species: "Diretório gratuito de espécies",
+            functions: "Biblioteca de funções gratuitas",
+            meta: "Coordenação comunitária e documentação"
+        },
+        zh: {
+            title: "维基百科",
+            subtitle: "自由的百科全书",
+            searchPlaceholder: "搜索并按按钮",
+            searchButton: "搜索",
+            commons: "自由媒体集合",
+            travel: "免费旅行指南",
+            dictionary: "免费词典",
+            books: "免费教科书",
+            news: "免费新闻来源",
+            data: "免费的知识库",
+            university: "免费学习资源",
+            quote: "免费的名言集",
+            software: "免费和开源维基软件",
+            library: "免费内容图书馆",
+            species: "免费的物种目录",
+            functions: "免费功能库",
+            meta: "社区协调和文档"
+        },
+        es: {
+            title: "Wikipedia",
+            subtitle: "La enciclopedia libre",
+            searchPlaceholder: "Busca y presiona el botón",
+            searchButton: "Buscar",
+            commons: "Colección de medios libres",
+            travel: "Guía de viaje gratuita",
+            dictionary: "Diccionario gratuito",
+            books: "Libros de texto gratuitos",
+            news: "Fuente de noticias gratuita",
+            data: "Base de conocimientos gratuita",
+            university: "Recursos de aprendizaje gratuitos",
+            quote: "Compendio de citas gratuito",
+            software: "Software wiki libre y abierto",
+            library: "Biblioteca de contenido gratuito",
+            species: "Directorio gratuito de especies",
+            functions: "Biblioteca de funciones gratuitas",
+            meta: "Coordinación y documentación comunitaria"
+        },
+        fr: {
+            title: "Wikipédia",
+            subtitle: "L'encyclopédie libre",
+            searchPlaceholder: "Recherchez et appuyez sur le bouton",
+            searchButton: "Rechercher",
+            commons: "Collection de médias libres",
+            travel: "Guide de voyage gratuit",
+            dictionary: "Dictionnaire gratuit",
+            books: "Manuels gratuits",
+            news: "Source d'information gratuite",
+            data: "Base de connaissances gratuite",
+            university: "Ressources d'apprentissage gratuites",
+            quote: "Recueil de citations gratuit",
+            software: "Logiciel wiki libre et ouvert",
+            library: "Bibliothèque de contenu gratuit",
+            species: "Répertoire gratuit des espèces",
+            functions: "Bibliothèque de fonctions gratuites",
+            meta: "Coordination communautaire et documentation"
+        },
+        ru: {
+            title: "Википедия",
+            subtitle: "Свободная энциклопедия",
+            searchPlaceholder: "Поиск и нажмите кнопку",
+            searchButton: "Поиск",
+            commons: "Коллекция свободных медиа",
+            travel: "Бесплатный путеводитель",
+            dictionary: "Бесплатный словарь",
+            books: "Бесплатные учебники",
+            news: "Источник бесплатных новостей",
+            data: "Бесплатная база знаний",
+            university: "Бесплатные учебные ресурсы",
+            quote: "Бесплатный сборник цитат",
+            software: "Бесплатное и открытое вики-программное обеспечение",
+            library: "Бесплатная библиотека контента",
+            species: "Бесплатный каталог видов",
+            functions: "Бесплатная библиотека функций",
+            meta: "Координация сообщества и документация"
+        },
+        ja: {
+            title: "ウィキペディア",
+            subtitle: "フリー百科事典",
+            searchPlaceholder: "検索してボタンを押してください",
+            searchButton: "検索",
+            commons: "フリーメディアコレクション",
+            travel: "無料の旅行ガイド",
+            dictionary: "無料の辞書",
+            books: "無料の教科書",
+            news: "無料のニュースソース",
+            data: "無料のナレッジベース",
+            university: "無料の学習リソース",
+            quote: "無料の引用集",
+            software: "無料かつオープンなウィキソフトウェア",
+            library: "無料のコンテンツライブラリ",
+            species: "無料の種ディレクトリ",
+            functions: "無料の関数ライブラリ",
+            meta: "コミュニティ調整とドキュメント"
+        },
+        de: {
+            title: "Wikipedia",
+            subtitle: "Die freie Enzyklopädie",
+            searchPlaceholder: "Suchen und drücken Sie die Taste",
+            searchButton: "Suchen",
+            commons: "Freie Mediensammlung",
+            travel: "Kostenloser Reiseführer",
+            dictionary: "Kostenloses Wörterbuch",
+            books: "Kostenlose Lehrbücher",
+            news: "Kostenlose Nachrichtenquelle",
+            data: "Kostenlose Wissensdatenbank",
+            university: "Kostenlose Lernressourcen",
+            quote: "Kostenlose Zitatsammlung",
+            software: "Freie & Open-Source-Wiki-Software",
+            library: "Kostenlose Inhaltsbibliothek",
+            species: "Kostenloses Artenverzeichnis",
+            functions: "Kostenlose Funktionsbibliothek",
+            meta: "Koordination und Dokumentation der Community"
+        },
+        it: {
+            title: "Wikipedia",
+            subtitle: "L'enciclopedia libera",
+            searchPlaceholder: "Cerca e premi il pulsante",
+            searchButton: "Cerca",
+            commons: "Raccolta di media liberi",
+            travel: "Guida di viaggio gratuita",
+            dictionary: "Dizionario gratuito",
+            books: "Libri di testo gratuiti",
+            news: "Fonte di notizie gratuita",
+            data: "Base di conoscenza gratuita",
+            university: "Risorse di apprendimento gratuite",
+            quote: "Compendio di citazioni gratuito",
+            software: "Software wiki libero e open-source",
+            library: "Biblioteca di contenuti gratuiti",
+            species: "Directory gratuita delle specie",
+            functions: "Libreria gratuita di funzioni",
+            meta: "Coordinamento e documentazione della comunità"
+        }
+    };
+
+    const langMap = {
+        english: "en",
+        español: "es",
+        deutsch: "de",
+        русский: "ru",
+        français: "fr",
+        português: "pt",
+        日本語: "ja",
+        中文: "zh",
+        italiano: "it"
+    };
+
+    document.querySelectorAll('.lang').forEach(langDiv => {
+        langDiv.addEventListener('click', () => {
+            const text = langDiv.innerText.toLowerCase();
+            let selectedLang = "en";
+            for (const key in langMap) {
+                if (text.includes(key.toLowerCase())) {
+                    selectedLang = langMap[key];
+                    break;
+                }
+            }
+
+            const t = translations[selectedLang];
+            document.querySelector("h1").innerText = t.title;
+            document.querySelector("p").innerText = t.subtitle;
+            document.querySelector("#searchInput").placeholder = t.searchPlaceholder;
+            document.querySelector("button[type='submit']").innerText = t.searchButton;
+
+            const footerItems = document.querySelectorAll(".footer-item p");
+            const keys = ["commons", "travel", "dictionary", "books", "news", "data", "university", "quote", "software", "library", "species", "functions", "meta"];
+            footerItems.forEach((item, index) => {
+                const strong = item.querySelector("strong");
+                const desc = keys[index];
+                if (strong && t[desc]) {
+                    strong.nextSibling.textContent = `\n${t[desc]}`;
+                }
+            });
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
